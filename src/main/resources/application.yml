@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://47.106.85.176:3306/supermarket_guide_system
+    username: sa
+    password: Lqw621621.
+  jpa:
+    # 打印sql
+    show-sql: true
