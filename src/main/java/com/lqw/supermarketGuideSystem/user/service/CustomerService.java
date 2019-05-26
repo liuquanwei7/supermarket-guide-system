@@ -1,6 +1,9 @@
 package com.lqw.supermarketGuideSystem.user.service;
 
 import com.lqw.supermarketGuideSystem.user.domain.Customer;
+import com.lqw.supermarketGuideSystem.user.dto.LoginGetDTO;
+
+import java.util.List;
 
 /**
  * @AUTHOR: liuquanwei
@@ -25,4 +28,14 @@ public interface CustomerService {
      * @return true：存在  false：不存在
      */
     Boolean checkAccountIsExist(String account);
+
+    /**
+     * 通过id查找顾客
+     *
+     * @param id
+     * @return
+     */
+    List<Customer> findCustomerById(int id);
+
+    Customer signInAccount(LoginGetDTO loginGetDTO);
 }

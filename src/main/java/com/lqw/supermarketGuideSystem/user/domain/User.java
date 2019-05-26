@@ -28,4 +28,6 @@ public class User {
     private Integer phone;
     private String email;
     private Timestamp signUpDate;
+    private Timestamp modifyDate;
+    private String picture;
 }

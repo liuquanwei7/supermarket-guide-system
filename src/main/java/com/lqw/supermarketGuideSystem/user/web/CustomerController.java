@@ -3,6 +3,7 @@ package com.lqw.supermarketGuideSystem.user.web;
 import com.lqw.supermarketGuideSystem.common.dto.ResultDTO;
 import com.lqw.supermarketGuideSystem.common.exception.ApiException;
 import com.lqw.supermarketGuideSystem.user.domain.Customer;
+import com.lqw.supermarketGuideSystem.user.dto.LoginGetDTO;
 import com.lqw.supermarketGuideSystem.user.service.impl.CustomerServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -37,6 +38,15 @@ public class CustomerController {
         }
         if(service.signUpAccount(customer)) {
             return ResultDTO.builder().statusCode(2000L).message("success").build();
+        }else {
+            return ResultDTO.builder().statusCode(4000L).message("false").build();
+        }
+    }
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public ResultDTO getCustomer(@RequestBody LoginGetDTO loginGetDTO) {
+        if(service.signInAccount(loginGetDTO)!=null) {
+            return ResultDTO.builder().statusCode(2000L).message("success").data(service.signInAccount(loginGetDTO)).build();
         }else {
             return ResultDTO.builder().statusCode(4000L).message("false").build();
         }

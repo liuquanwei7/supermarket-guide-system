@@ -17,7 +17,6 @@ import javax.validation.constraints.Pattern;
 @Component
 public class Customer {
     private int id;
-
     private String account;
     private String password;
     private String type;
@@ -29,4 +28,5 @@ public class Customer {
     private Integer phone;
     @Email(message = "邮箱格式有误")
     private String email;
+    private String picture;
 }
